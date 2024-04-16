@@ -26,5 +26,17 @@
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
+        <ini name="pcov.enabled" value="true"/>
     </php>
+    <coverage processUncoveredFiles="true">
+    <include>
+        <directory suffix=".php">./app</directory>
+    </include>
+    <report>
+        <clover outputFile="build/logs/clover.xml"/>
+        <html outputFile="build/coverage"/>
+        <text outputFile="build/logs/coverage.txt"/>
+        <php outputDirectory="build/logs/phpunit-coverage"/>
+    </report>
+</coverage>
 </phpunit>
